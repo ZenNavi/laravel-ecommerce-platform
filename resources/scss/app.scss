@@ -1,13 +1,5 @@
-// Main SCSS entry point
-// @use rules must come first
-@use 'abstracts' as *;
-@use 'base';
-@use 'components';
-@use 'layouts';
-@use 'pages';
-
-// Tailwind CSS
-@use 'tailwindcss';
+// Tailwind CSS v4
+@import "tailwindcss";
 
 // Tailwind content sources
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -18,5 +10,12 @@
 
 // Custom theme
 @theme {
-  --font-sans: #{$font-sans};
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+// SCSS Modules
+@use 'abstracts' as *;
+@use 'base';
+@use 'components';
+@use 'layouts';
+@use 'pages';
