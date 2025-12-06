@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 // Typography styles
 .text-xs { font-size: $font-size-xs; }
 .text-sm { font-size: $font-size-sm; }

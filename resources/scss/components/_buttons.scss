@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use '../abstracts' as *;
+
 // Button components
 .btn {
   @include button-base;
@@ -17,7 +20,7 @@
   color: white;
 
   &:hover:not(:disabled) {
-    background-color: darken($success, 10%);
+    background-color: color.adjust($success, $lightness: -10%);
   }
 }
 
@@ -27,7 +30,7 @@
   color: white;
 
   &:hover:not(:disabled) {
-    background-color: darken($danger, 10%);
+    background-color: color.adjust($danger, $lightness: -10%);
   }
 }
 

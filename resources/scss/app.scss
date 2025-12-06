@@ -1,27 +1,13 @@
 // Main SCSS entry point
+// @use rules must come first
+@use 'abstracts' as *;
+@use 'base';
+@use 'components';
+@use 'layouts';
+@use 'pages';
 
 // Tailwind CSS
-@import 'tailwindcss';
-
-// Abstracts (variables, mixins, functions)
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-
-// Base styles
-@import 'base/reset';
-@import 'base/typography';
-
-// Components
-@import 'components/buttons';
-@import 'components/forms';
-@import 'components/cards';
-
-// Layouts
-@import 'layouts/navigation';
-@import 'layouts/footer';
-
-// Pages
-@import 'pages/home';
+@use 'tailwindcss';
 
 // Tailwind content sources
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
