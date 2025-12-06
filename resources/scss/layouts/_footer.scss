@@ -1,0 +1,84 @@
+// Footer styles
+.footer {
+  background-color: white;
+  border-top: 1px solid $gray-200;
+  margin-top: auto;
+
+  &-container {
+    @include container;
+    padding-top: $spacing-6;
+    padding-bottom: $spacing-6;
+  }
+
+  &-content {
+    @include flex-column;
+    gap: $spacing-8;
+
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &-brand {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: $spacing-2;
+  }
+
+  &-description {
+    font-size: $font-size-sm;
+    color: $gray-500;
+    max-width: 300px;
+  }
+
+  &-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-section {
+    h4 {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: $gray-900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: $spacing-4;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-2;
+    }
+
+    a {
+      font-size: $font-size-sm;
+      color: $gray-500;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &-bottom {
+    margin-top: $spacing-8;
+    padding-top: $spacing-6;
+    border-top: 1px solid $gray-200;
+    text-align: center;
+  }
+
+  &-copyright {
+    font-size: $font-size-sm;
+    color: $gray-500;
+  }
+}

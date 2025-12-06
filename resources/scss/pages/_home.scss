@@ -1,0 +1,162 @@
+// Home page styles
+.hero {
+  background: linear-gradient(135deg, $primary-dark 0%, $primary 100%);
+  color: white;
+  padding: $spacing-16 0;
+
+  @include md {
+    padding: $spacing-16 * 1.5 0;
+  }
+
+  &-container {
+    @include container;
+    text-align: center;
+  }
+
+  &-title {
+    font-size: $font-size-3xl;
+    font-weight: 800;
+    margin-bottom: $spacing-6;
+
+    @include md {
+      font-size: $font-size-4xl * 1.25;
+    }
+
+    @include lg {
+      font-size: $font-size-4xl * 1.5;
+    }
+  }
+
+  &-subtitle {
+    font-size: $font-size-lg;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto $spacing-10;
+
+    @include md {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    justify-content: center;
+
+    @include sm {
+      flex-direction: row;
+    }
+  }
+
+  &-btn {
+    padding: $spacing-3 $spacing-8;
+    font-size: $font-size-base;
+    font-weight: 500;
+    border-radius: $radius-md;
+    transition: all $transition-fast;
+
+    &--primary {
+      background-color: white;
+      color: $primary;
+
+      &:hover {
+        background-color: $gray-100;
+      }
+    }
+
+    &--secondary {
+      background-color: rgba(white, 0.2);
+      color: white;
+
+      &:hover {
+        background-color: rgba(white, 0.3);
+      }
+    }
+  }
+}
+
+// Features section
+.features {
+  background-color: $gray-50;
+  padding: $spacing-16 0;
+
+  &-container {
+    @include container;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-8;
+
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-item {
+    text-align: center;
+  }
+
+  &-icon {
+    @include flex-center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto $spacing-4;
+    background-color: rgba($primary, 0.1);
+    border-radius: $radius-full;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: $primary;
+    }
+  }
+
+  &-title {
+    font-size: $font-size-lg;
+    font-weight: 500;
+    color: $gray-900;
+    margin-bottom: $spacing-2;
+  }
+
+  &-description {
+    font-size: $font-size-base;
+    color: $gray-500;
+  }
+}
+
+// Products section
+.products-section {
+  padding: $spacing-16 0;
+
+  &-container {
+    @include container;
+  }
+
+  &-header {
+    @include flex-between;
+    margin-bottom: $spacing-8;
+  }
+
+  &-title {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $gray-900;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

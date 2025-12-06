@@ -1,0 +1,107 @@
+// Navigation styles
+.nav {
+  background-color: white;
+  box-shadow: $shadow-sm;
+
+  &-container {
+    @include container;
+    @include flex-between;
+    height: 64px;
+  }
+
+  &-brand {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $primary;
+
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+
+  &-links {
+    display: none;
+
+    @include md {
+      display: flex;
+      gap: $spacing-8;
+    }
+  }
+
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    padding: $spacing-1 0;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $gray-500;
+    border-bottom: 2px solid transparent;
+    transition: all $transition-fast;
+
+    &:hover {
+      color: $gray-700;
+      border-color: $gray-300;
+    }
+
+    &.active {
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &-actions {
+    display: none;
+
+    @include sm {
+      display: flex;
+      align-items: center;
+      gap: $spacing-4;
+    }
+  }
+
+  &-mobile-toggle {
+    display: block;
+    padding: $spacing-2;
+    color: $gray-600;
+
+    @include md {
+      display: none;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+// Mobile menu
+.mobile-menu {
+  display: block;
+  background-color: white;
+  border-top: 1px solid $gray-200;
+
+  @include md {
+    display: none;
+  }
+
+  &-links {
+    padding: $spacing-4;
+  }
+
+  &-link {
+    display: block;
+    padding: $spacing-3 0;
+    font-size: $font-size-base;
+    color: $gray-600;
+    border-bottom: 1px solid $gray-100;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+// Main SCSS entry point
+
+// Tailwind CSS
+@import 'tailwindcss';
+
+// Abstracts (variables, mixins, functions)
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Base styles
+@import 'base/reset';
+@import 'base/typography';
+
+// Components
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/cards';
+
+// Layouts
+@import 'layouts/navigation';
+@import 'layouts/footer';
+
+// Pages
+@import 'pages/home';
+
+// Tailwind content sources
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../**/*.jsx';
+
+// Custom theme
+@theme {
+  --font-sans: #{$font-sans};
+}

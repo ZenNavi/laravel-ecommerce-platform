@@ -1,0 +1,87 @@
+// Card components
+.card {
+  @include card;
+}
+
+.card-header {
+  padding: $spacing-4 $spacing-6;
+  border-bottom: 1px solid $gray-200;
+}
+
+.card-body {
+  padding: $spacing-6;
+}
+
+.card-footer {
+  padding: $spacing-4 $spacing-6;
+  border-top: 1px solid $gray-200;
+  background-color: $gray-50;
+}
+
+.card-title {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: $gray-900;
+}
+
+.card-subtitle {
+  font-size: $font-size-sm;
+  color: $gray-500;
+}
+
+// Product card
+.product-card {
+  @include card;
+  transition: box-shadow $transition-fast;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: $gray-200;
+  }
+
+  .product-info {
+    padding: $spacing-4;
+  }
+
+  .product-name {
+    font-weight: 500;
+    color: $gray-900;
+    @include truncate;
+  }
+
+  .product-price {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $gray-900;
+  }
+
+  .product-description {
+    font-size: $font-size-sm;
+    color: $gray-500;
+    @include line-clamp(2);
+  }
+}
+
+// Stat card
+.stat-card {
+  @include card;
+  padding: $spacing-6;
+
+  .stat-label {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $gray-500;
+  }
+
+  .stat-value {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $gray-900;
+  }
+}
