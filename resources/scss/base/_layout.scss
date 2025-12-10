@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+// Container - centered with wider max-width
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @include xl {
+    max-width: 1536px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+// Main content area
+main {
+  width: 100%;
+}
+
+main > section {
+  width: 100%;
+}

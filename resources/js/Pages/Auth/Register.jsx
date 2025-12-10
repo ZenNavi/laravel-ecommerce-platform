@@ -15,112 +15,120 @@ export default function Register() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <Head title="Register" />
+        <div className="min-h-screen flex items-center justify-center bg-white px-6 py-12">
+            <Head title="회원가입" />
 
-            <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-                <div className="text-center mb-8">
-                    <Link href="/" className="text-2xl font-bold text-indigo-600">
-                        eCommerce
+            <div className="max-w-sm w-full">
+                <div className="text-center mb-10">
+                    <Link href="/" className="text-xl font-semibold text-gray-900">
+                        스토어
                     </Link>
-                    <h2 className="mt-4 text-xl font-semibold text-gray-900">
-                        Create your account
+                    <h2 className="mt-6 text-2xl font-semibold text-gray-900">
+                        계정 만들기
                     </h2>
+                    <p className="mt-2 text-sm text-gray-500">
+                        지금 가입하고 쇼핑을 시작하세요
+                    </p>
                 </div>
 
-                <form onSubmit={submit}>
-                    <div className="mb-4">
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                            Name
+                <form onSubmit={submit} className="space-y-5">
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                            이름
                         </label>
                         <input
                             id="name"
                             type="text"
                             value={data.name}
                             onChange={(e) => setData('name', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            className="block w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-400 focus:ring-0 text-sm transition-colors"
+                            placeholder="이름을 입력하세요"
                             required
                         />
                         {errors.name && (
-                            <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                            <p className="mt-2 text-sm text-red-500">{errors.name}</p>
                         )}
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                            Email
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                            이메일
                         </label>
                         <input
                             id="email"
                             type="email"
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            className="block w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-400 focus:ring-0 text-sm transition-colors"
+                            placeholder="example@email.com"
                             required
                         />
                         {errors.email && (
-                            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                            <p className="mt-2 text-sm text-red-500">{errors.email}</p>
                         )}
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                            Password
+                    <div>
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                            비밀번호
                         </label>
                         <input
                             id="password"
                             type="password"
                             value={data.password}
                             onChange={(e) => setData('password', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            className="block w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-400 focus:ring-0 text-sm transition-colors"
+                            placeholder="비밀번호를 입력하세요"
                             required
                         />
                         {errors.password && (
-                            <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+                            <p className="mt-2 text-sm text-red-500">{errors.password}</p>
                         )}
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="password_confirmation" className="block text-sm font-medium text-gray-700">
-                            Confirm Password
+                    <div>
+                        <label htmlFor="password_confirmation" className="block text-sm font-medium text-gray-700 mb-2">
+                            비밀번호 확인
                         </label>
                         <input
                             id="password_confirmation"
                             type="password"
                             value={data.password_confirmation}
                             onChange={(e) => setData('password_confirmation', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            className="block w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-400 focus:ring-0 text-sm transition-colors"
+                            placeholder="비밀번호를 다시 입력하세요"
                             required
                         />
                     </div>
 
-                    <div className="mb-6">
-                        <label htmlFor="referral_code" className="block text-sm font-medium text-gray-700">
-                            Referral Code (Optional)
+                    <div>
+                        <label htmlFor="referral_code" className="block text-sm font-medium text-gray-700 mb-2">
+                            추천인 코드
+                            <span className="text-gray-400 font-normal ml-1">(선택)</span>
                         </label>
                         <input
                             id="referral_code"
                             type="text"
                             value={data.referral_code}
                             onChange={(e) => setData('referral_code', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                            placeholder="Enter referral code if you have one"
+                            className="block w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-400 focus:ring-0 text-sm transition-colors"
+                            placeholder="추천인 코드를 입력하세요"
                         />
                     </div>
 
                     <button
                         type="submit"
                         disabled={processing}
-                        className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md font-medium hover:bg-indigo-700 disabled:opacity-50"
+                        className="w-full bg-gray-900 text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors disabled:opacity-50"
                     >
-                        {processing ? 'Creating account...' : 'Create account'}
+                        {processing ? '가입 중...' : '회원가입'}
                     </button>
                 </form>
 
-                <p className="mt-6 text-center text-sm text-gray-600">
-                    Already have an account?{' '}
-                    <Link href="/login" className="text-indigo-600 hover:text-indigo-800">
-                        Sign in
+                <p className="mt-8 text-center text-sm text-gray-500">
+                    이미 계정이 있으신가요?{' '}
+                    <Link href="/login" className="text-gray-900 hover:underline">
+                        로그인
                     </Link>
                 </p>
             </div>

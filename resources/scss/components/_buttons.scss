@@ -56,6 +56,140 @@
   }
 }
 
+// Theme buttons (Harri-inspired)
+.btn-theme {
+  @include button-base;
+  background-color: $theme-primary;
+  color: $white;
+  font-weight: 700;
+  font-size: $font-size-base;
+  padding: 10px 30px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  letter-spacing: -0.02em;
+
+  &:hover:not(:disabled) {
+    background-color: $theme-purple;
+    color: $white;
+  }
+}
+
+.btn-theme-black {
+  @include button-base;
+  background-color: $black;
+  color: $white;
+  font-weight: 500;
+  padding: 8px 29px 10px;
+
+  &:hover:not(:disabled) {
+    background-color: $theme-primary;
+    color: $white;
+  }
+}
+
+.btn-theme-green {
+  @include button-base;
+  background-color: $theme-secondary;
+  color: $white;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 12px 42px;
+
+  &:hover:not(:disabled) {
+    background-color: $theme-secondary-dark;
+  }
+}
+
+.btn-theme-orange {
+  @include button-base;
+  background-color: $theme-orange;
+  color: $white;
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: $radius-lg;
+
+  &:hover:not(:disabled) {
+    background-color: $theme-tertiary;
+  }
+}
+
+.btn-theme-blue {
+  @include button-base;
+  background-color: $theme-tertiary;
+  color: $white;
+  font-weight: 500;
+  padding: 16px 45px 18px;
+  border-radius: $radius-lg;
+
+  &:hover:not(:disabled) {
+    background-color: $black;
+  }
+}
+
+// Border buttons
+.btn-border {
+  @include button-base;
+  background-color: transparent;
+  border: 1px solid $border-light;
+  color: $black;
+  font-weight: 500;
+  padding: 6px 18px;
+
+  &:hover:not(:disabled) {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+  }
+}
+
+.btn-border-theme {
+  @include button-base;
+  background-color: transparent;
+  border: 2px solid $theme-primary;
+  color: $theme-primary;
+  font-weight: 700;
+  padding: 17px 35px;
+
+  &:hover:not(:disabled) {
+    background-color: $theme-primary;
+    border-color: $theme-primary;
+    color: $white;
+  }
+}
+
+// Round buttons
+.btn-round {
+  @include button-base;
+  background-color: $theme-green;
+  color: $white;
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 10px 35px;
+
+  &:hover:not(:disabled) {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.btn-round-border {
+  @include button-base;
+  background-color: transparent;
+  color: $black;
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 13px 39px;
+  border: 2px solid color.change($black, $alpha: 0.1);
+
+  &:hover:not(:disabled) {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+  }
+}
+
+// Size variants
 .btn-sm {
   padding: $spacing-1 $spacing-2;
   font-size: $font-size-sm;
@@ -76,5 +210,24 @@
   svg {
     width: 1.25rem;
     height: 1.25rem;
+  }
+}
+
+// Cart button
+.btn-add-cart {
+  @include button-base;
+  background-color: $black;
+  color: $white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 7px 25px;
+
+  svg, i {
+    margin-right: 7px;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $theme-primary;
+    color: $white;
   }
 }

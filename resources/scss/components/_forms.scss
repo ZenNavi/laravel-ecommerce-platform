@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../abstracts' as *;
 
 // Form components
@@ -69,5 +70,184 @@
 
   .btn {
     border-radius: 0 $radius-md $radius-md 0;
+  }
+}
+
+// Harri-style inputs
+.input {
+  width: 100%;
+  height: 60px;
+  padding: 0 25px;
+  border: 1px solid $bg-input;
+  background-color: $bg-input;
+  color: $black;
+  font-size: $font-size-base;
+  outline: none;
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: #85858B;
+  }
+
+  &:focus {
+    border-color: $theme-primary;
+    background-color: $white;
+  }
+
+  &--rounded {
+    border-radius: $radius-md;
+  }
+}
+
+.input-theme {
+  width: 100%;
+  height: 50px;
+  padding: 0 24px;
+  border: 1px solid $border-default;
+  background-color: $white;
+  border-radius: $radius-md;
+  font-size: 14px;
+  outline: none;
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:focus {
+    border-color: $theme-primary;
+    box-shadow: 0 0 0 3px color.change($theme-primary, $alpha: 0.1);
+  }
+}
+
+.textarea-theme {
+  width: 100%;
+  min-height: 180px;
+  padding: 20px 25px;
+  border: 1px solid $bg-input;
+  background-color: $bg-input;
+  color: $black;
+  font-size: $font-size-base;
+  outline: none;
+  resize: vertical;
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: #85858B;
+  }
+
+  &:focus {
+    border-color: $theme-primary;
+    background-color: $white;
+  }
+}
+
+// Checkout form inputs
+.checkout-form-list {
+  margin-bottom: 30px;
+
+  label {
+    color: $text-body;
+    display: block;
+    margin-bottom: 5px;
+
+    span.required {
+      color: $danger;
+    }
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    height: 60px;
+    border: 1px solid $bg-input;
+    outline: 0;
+    background-color: $bg-input;
+    color: $black;
+    padding: 0 25px;
+
+    &::placeholder {
+      color: #85858B;
+    }
+
+    &:focus {
+      border-color: $theme-primary;
+      background-color: $white;
+    }
+  }
+}
+
+// Search input
+.search-input {
+  position: relative;
+
+  input {
+    width: 100%;
+    height: 46px;
+    border: 1px solid $border-default;
+    padding: 0 45px 0 20px;
+    background-color: $white;
+    font-size: 14px;
+
+    &::placeholder {
+      color: #767A7D;
+    }
+
+    &:focus {
+      border-color: $theme-primary;
+      outline: none;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $theme-primary;
+    }
+  }
+}
+
+// Quantity input
+.quantity {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $border-default;
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: $theme-primary;
+    }
+  }
+
+  &__input {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid $border-default;
+    border-right: 1px solid $border-default;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+    }
   }
 }

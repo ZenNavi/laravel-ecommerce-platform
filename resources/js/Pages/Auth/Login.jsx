@@ -13,89 +13,94 @@ export default function Login({ status }) {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <Head title="Login" />
+        <div className="min-h-screen flex items-center justify-center bg-white px-6">
+            <Head title="로그인" />
 
-            <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-                <div className="text-center mb-8">
-                    <Link href="/" className="text-2xl font-bold text-indigo-600">
-                        eCommerce
+            <div className="max-w-sm w-full">
+                <div className="text-center mb-10">
+                    <Link href="/" className="text-xl font-semibold text-gray-900">
+                        스토어
                     </Link>
-                    <h2 className="mt-4 text-xl font-semibold text-gray-900">
-                        Sign in to your account
+                    <h2 className="mt-6 text-2xl font-semibold text-gray-900">
+                        다시 오셨군요
                     </h2>
+                    <p className="mt-2 text-sm text-gray-500">
+                        계정에 로그인하여 계속하세요
+                    </p>
                 </div>
 
                 {status && (
-                    <div className="mb-4 text-sm text-green-600 text-center">{status}</div>
+                    <div className="mb-6 text-sm text-green-600 text-center">{status}</div>
                 )}
 
-                <form onSubmit={submit}>
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                            Email
+                <form onSubmit={submit} className="space-y-5">
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                            이메일
                         </label>
                         <input
                             id="email"
                             type="email"
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            className="block w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-400 focus:ring-0 text-sm transition-colors"
+                            placeholder="example@email.com"
                             required
                         />
                         {errors.email && (
-                            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                            <p className="mt-2 text-sm text-red-500">{errors.email}</p>
                         )}
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                            Password
+                    <div>
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                            비밀번호
                         </label>
                         <input
                             id="password"
                             type="password"
                             value={data.password}
                             onChange={(e) => setData('password', e.target.value)}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            className="block w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-400 focus:ring-0 text-sm transition-colors"
+                            placeholder="비밀번호를 입력하세요"
                             required
                         />
                         {errors.password && (
-                            <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+                            <p className="mt-2 text-sm text-red-500">{errors.password}</p>
                         )}
                     </div>
 
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center justify-between">
                         <label className="flex items-center">
                             <input
                                 type="checkbox"
                                 checked={data.remember}
                                 onChange={(e) => setData('remember', e.target.checked)}
-                                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-0"
                             />
-                            <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                            <span className="ml-2 text-sm text-gray-500">로그인 유지</span>
                         </label>
                         <Link
                             href="/forgot-password"
-                            className="text-sm text-indigo-600 hover:text-indigo-800"
+                            className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
                         >
-                            Forgot password?
+                            비밀번호 찾기
                         </Link>
                     </div>
 
                     <button
                         type="submit"
                         disabled={processing}
-                        className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md font-medium hover:bg-indigo-700 disabled:opacity-50"
+                        className="w-full bg-gray-900 text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors disabled:opacity-50"
                     >
-                        {processing ? 'Signing in...' : 'Sign in'}
+                        {processing ? '로그인 중...' : '로그인'}
                     </button>
                 </form>
 
-                <p className="mt-6 text-center text-sm text-gray-600">
-                    Don't have an account?{' '}
-                    <Link href="/register" className="text-indigo-600 hover:text-indigo-800">
-                        Register
+                <p className="mt-8 text-center text-sm text-gray-500">
+                    계정이 없으신가요?{' '}
+                    <Link href="/register" className="text-gray-900 hover:underline">
+                        회원가입
                     </Link>
                 </p>
             </div>

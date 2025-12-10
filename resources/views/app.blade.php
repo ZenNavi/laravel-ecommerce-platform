@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title inertia>{{ config('app.name', 'Laravel eCommerce') }}</title>
     @viteReactRefresh
-    @vite(['resources/scss/app.scss', 'resources/js/app.jsx'])
+    @vite(['resources/scss/app.scss', 'resources/css/tailwind.css', 'resources/js/app.jsx'])
     @inertiaHead
 </head>
 <body class="font-sans antialiased">

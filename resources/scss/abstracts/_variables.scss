@@ -1,13 +1,23 @@
-// Colors
-$primary: #4f46e5; // Indigo-600
-$primary-light: #6366f1; // Indigo-500
-$primary-dark: #4338ca; // Indigo-700
+// Theme Colors (Harri-inspired eCommerce palette)
+$theme-primary: #F50963; // Vibrant Pink - main accent
+$theme-primary-dark: #C3004B;
+$theme-secondary: #008080; // Teal - secondary accent
+$theme-secondary-dark: #065454;
+$theme-tertiary: #4353FF; // Blue - tertiary accent
+$theme-orange: #FF5A1B;
+$theme-green: #2CAE76;
+$theme-purple: #6364DB;
 
-$secondary: #64748b; // Slate-500
-$success: #22c55e; // Green-500
-$warning: #f59e0b; // Amber-500
-$danger: #ef4444; // Red-500
-$info: #3b82f6; // Blue-500
+// Legacy Colors (for backward compatibility)
+$primary: $theme-primary;
+$primary-light: #FF4081;
+$primary-dark: $theme-primary-dark;
+
+$secondary: #64748b;
+$success: #22c55e;
+$warning: #f59e0b;
+$danger: #ef4444;
+$info: #3b82f6;
 
 // Grays
 $gray-50: #f9fafb;
@@ -21,8 +31,29 @@ $gray-700: #374151;
 $gray-800: #1f2937;
 $gray-900: #111827;
 
+// Text Colors
+$text-body: #55585B;
+$text-heading: #010F1C;
+$text-muted: #A3A3AA;
+
+// Common Colors
+$white: #ffffff;
+$black: #03041C;
+$black-solid: #000000;
+
+// Border Colors
+$border-light: #EAEAEF;
+$border-default: #DADCE0;
+$border-dark: #CFD0DA;
+
+// Background Colors
+$bg-light: #F5F6F8;
+$bg-lighter: #F9F9F9;
+$bg-input: #F7F7F7;
+
 // Typography
-$font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-sans: 'Poppins', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-heading: 'Space Grotesk', 'Poppins', sans-serif;
 $font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
 $font-size-xs: 0.75rem;
